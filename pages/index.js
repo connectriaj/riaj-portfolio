@@ -14,26 +14,27 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faBook,
-  faBookAtlas,
   faBriefcase,
+  faBullhorn,
   faCalendar,
   faCode,
   faCodeBranch,
   faComment,
-  faCommentAlt,
-  faContactBook,
   faDatabase,
   faFire,
   faHome,
+  faLaptopCode,
   faList,
-  faPen,
-  faTextHeight,
+  faMobileAlt,
+  faPalette,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import man from '../public/man.jpg';
+import Portfolio from './portfolio';
 
 export default function Home() {
   return (
@@ -76,19 +77,19 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#services">
                 <FontAwesomeIcon className="icon" icon={faList} />
                 Services
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#portfolio">
                 <FontAwesomeIcon className="icon" icon={faBriefcase} />
                 Portfolio
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#contact">
                 <FontAwesomeIcon className="icon" icon={faComment} />
                 Contact
               </a>
@@ -96,8 +97,8 @@ export default function Home() {
           </ul>
         </section>
         {/* home content */}
-        <section className="main-content" id="home">
-          <section className="home section">
+        <section className="main-content">
+          <section className="home section" id="home">
             <div className="container">
               <div className="row">
                 <div className="home-info">
@@ -133,7 +134,7 @@ export default function Home() {
           </section>
         </section>
         {/* about section  */}
-        <section className="about section" id="about">
+        <section className="about section " id="about">
           <div className="container">
             <div className="row">
               <div className="section-title pl-4">
@@ -221,38 +222,74 @@ export default function Home() {
                     </div>
 
                     {/* education and experiences */}
-                    <div className="flex justify-between">
+                    <div className=" flex lg:flex-row flex-col justify-between gap-x-8">
                       <div className="education pl-4">
                         <h3 className="title">Education</h3>
-                        <div className="row">
+                        <div className="row lg:w-[600px]">
                           <div className="timeline-box pl-4">
                             <div className="timeline shadow-dark glass">
                               {/* timeline item  */}
                               <div className="timeline-item">
                                 <div className="circle-dot"></div>
                                 <h3 className="timeline-date">
-                                  <FontAwesomeIcon className='icon' icon={faCalendar}/> 2013 - 2015
+                                  <FontAwesomeIcon
+                                    className="icon"
+                                    icon={faCalendar}
+                                  />{' '}
+                                  2013 - 2015
                                 </h3>
-                                <h4 className="timeline-title">Bachelor of Computer Science</h4>
-                                <p className="timeline-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur consequatur expedita distinctio, alias odio laborum magni tenetur laudantium cum esse accusantium eum molestiae delectus commodi.</p>
+                                <h4 className="timeline-title">
+                                  Bachelor of Computer Science
+                                </h4>
+                                <p className="timeline-text">
+                                  Lorem ipsum dolor, sit amet consectetur
+                                  adipisicing elit. Aspernatur consequatur
+                                  expedita distinctio, alias odio laborum magni
+                                  tenetur laudantium cum esse accusantium eum
+                                  molestiae delectus commodi.
+                                </p>
                               </div>
                               {/* timeline item  */}
                               <div className="timeline-item">
                                 <div className="circle-dot"></div>
                                 <h3 className="timeline-date">
-                                  <FontAwesomeIcon className='icon' icon={faCalendar}/> 2013 - 2015
+                                  <FontAwesomeIcon
+                                    className="icon"
+                                    icon={faCalendar}
+                                  />{' '}
+                                  2013 - 2015
                                 </h3>
-                                <h4 className="timeline-title">Bachelor of Computer Science</h4>
-                                <p className="timeline-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur consequatur expedita distinctio, alias odio laborum magni tenetur laudantium cum esse accusantium eum molestiae delectus commodi.</p>
+                                <h4 className="timeline-title">
+                                  Bachelor of Computer Science
+                                </h4>
+                                <p className="timeline-text">
+                                  Lorem ipsum dolor, sit amet consectetur
+                                  adipisicing elit. Aspernatur consequatur
+                                  expedita distinctio, alias odio laborum magni
+                                  tenetur laudantium cum esse accusantium eum
+                                  molestiae delectus commodi.
+                                </p>
                               </div>
                               {/* timeline item  */}
                               <div className="timeline-item">
                                 <div className="circle-dot"></div>
                                 <h3 className="timeline-date">
-                                  <FontAwesomeIcon className='icon' icon={faCalendar}/> 2013 - 2015
+                                  <FontAwesomeIcon
+                                    className="icon"
+                                    icon={faCalendar}
+                                  />{' '}
+                                  2013 - 2015
                                 </h3>
-                                <h4 className="timeline-title">Bachelor of Computer Science</h4>
-                                <p className="timeline-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur consequatur expedita distinctio, alias odio laborum magni tenetur laudantium cum esse accusantium eum molestiae delectus commodi.</p>
+                                <h4 className="timeline-title">
+                                  Bachelor of Computer Science
+                                </h4>
+                                <p className="timeline-text">
+                                  Lorem ipsum dolor, sit amet consectetur
+                                  adipisicing elit. Aspernatur consequatur
+                                  expedita distinctio, alias odio laborum magni
+                                  tenetur laudantium cum esse accusantium eum
+                                  molestiae delectus commodi.
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -260,6 +297,75 @@ export default function Home() {
                       </div>
                       <div className="experience pl-4">
                         <h3 className="title">Experience</h3>
+                        <div className="row lg:w-[600px]">
+                          <div className="timeline-box pl-4">
+                            <div className="timeline shadow-dark glass">
+                              {/* timeline item  */}
+                              <div className="timeline-item">
+                                <div className="circle-dot"></div>
+                                <h3 className="timeline-date">
+                                  <FontAwesomeIcon
+                                    className="icon"
+                                    icon={faCalendar}
+                                  />{' '}
+                                  2013 - 2015
+                                </h3>
+                                <h4 className="timeline-title">
+                                  Bachelor of Computer Science
+                                </h4>
+                                <p className="timeline-text">
+                                  Lorem ipsum dolor, sit amet consectetur
+                                  adipisicing elit. Aspernatur consequatur
+                                  expedita distinctio, alias odio laborum magni
+                                  tenetur laudantium cum esse accusantium eum
+                                  molestiae delectus commodi.
+                                </p>
+                              </div>
+                              {/* timeline item  */}
+                              <div className="timeline-item">
+                                <div className="circle-dot"></div>
+                                <h3 className="timeline-date">
+                                  <FontAwesomeIcon
+                                    className="icon"
+                                    icon={faCalendar}
+                                  />{' '}
+                                  2013 - 2015
+                                </h3>
+                                <h4 className="timeline-title">
+                                  Bachelor of Computer Science
+                                </h4>
+                                <p className="timeline-text">
+                                  Lorem ipsum dolor, sit amet consectetur
+                                  adipisicing elit. Aspernatur consequatur
+                                  expedita distinctio, alias odio laborum magni
+                                  tenetur laudantium cum esse accusantium eum
+                                  molestiae delectus commodi.
+                                </p>
+                              </div>
+                              {/* timeline item  */}
+                              <div className="timeline-item">
+                                <div className="circle-dot"></div>
+                                <h3 className="timeline-date">
+                                  <FontAwesomeIcon
+                                    className="icon"
+                                    icon={faCalendar}
+                                  />{' '}
+                                  2013 - 2015
+                                </h3>
+                                <h4 className="timeline-title">
+                                  Bachelor of Computer Science
+                                </h4>
+                                <p className="timeline-text">
+                                  Lorem ipsum dolor, sit amet consectetur
+                                  adipisicing elit. Aspernatur consequatur
+                                  expedita distinctio, alias odio laborum magni
+                                  tenetur laudantium cum esse accusantium eum
+                                  molestiae delectus commodi.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -270,8 +376,8 @@ export default function Home() {
         </section>
 
         {/* skills section  */}
-        <section className="skills section" id="skills">
-          <div className="container">
+        <section className="skills section " id="skills">
+          <div className="container cursor-pointer">
             <div className="row">
               <div className="section-title pl-4">
                 <h2>My Skills</h2>
@@ -523,11 +629,137 @@ export default function Home() {
         </section>
 
         {/* service section  */}
-        <section className="service section">
+        <section className="service section " id="services">
           <div className="container">
             <div className="row">
               <div className="section-title pl-4">
                 <h2>Services</h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div className="row">
+                {/* service item  */}
+                <div className="service-item pl-4">
+                  <div className="service-item-inner  pl-4">
+                    <div className="icon">
+                      <FontAwesomeIcon className="icon" icon={faMobileAlt} />
+                    </div>
+                    <h4 className="text-lg font-bold mb-2">Web Design</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Mollitia repudiandae odio sapiente.
+                    </p>
+                  </div>
+                </div>
+                {/* service item  */}
+                <div className="service-item pl-4">
+                  <div className="service-item-inner  pl-4">
+                    <div className="icon">
+                      <FontAwesomeIcon className="icon" icon={faLaptopCode} />
+                    </div>
+                    <h4 className="text-lg font-bold mb-2">Web Design</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Mollitia repudiandae odio sapiente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                {/* service item  */}
+                <div className="service-item pl-4">
+                  <div className="service-item-inner  pl-4">
+                    <div className="icon">
+                      <FontAwesomeIcon className="icon" icon={faCode} />
+                    </div>
+                    <h4 className="text-lg font-bold mb-2">Web Design</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Mollitia repudiandae odio sapiente.
+                    </p>
+                  </div>
+                </div>
+
+                {/* service item  */}
+                <div className="service-item pl-4">
+                  <div className="service-item-inner  pl-4">
+                    <div className="icon">
+                      <FontAwesomeIcon className="icon" icon={faBullhorn} />
+                    </div>
+                    <h4 className="text-lg font-bold mb-2">Web Design</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Mollitia repudiandae odio sapiente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                {/* service item  */}
+                <div className="service-item pl-4">
+                  <div className="service-item-inner  pl-4">
+                    <div className="icon">
+                      <FontAwesomeIcon className="icon" icon={faPalette} />
+                    </div>
+                    <h4 className="text-lg font-bold mb-2">Web Design</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Mollitia repudiandae odio sapiente.
+                    </p>
+                  </div>
+                </div>
+                {/* service item  */}
+                <div className="service-item pl-4">
+                  <div className="service-item-inner pl-4">
+                    <div className="icon">
+                      <FontAwesomeIcon className="icon" icon={faReact} />
+                    </div>
+                    <h4 className="text-lg font-bold mb-2">Web Design</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Mollitia repudiandae odio sapiente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* portfolio section  */}
+        <section className="portfolio section" id="portfolio">
+          <div className="container">
+            <div className="row">
+              <div className="section-title pl-4">
+                <h2>Portfolio</h2>
+              </div>
+            </div>
+            <div className="row">
+              <div className="portfolio-heading pl-4">
+                <h2 className="text-lg font-bold font-mono">
+                  My Latest Projects:
+                </h2>
+              </div>
+            </div>
+            {/* portfolio item  */}
+            <Portfolio />
+          </div>
+        </section>
+
+        {/* contact section  */}
+        <section className="contact section" id="contact">
+          <div className="container">
+            <div className="row">
+              <div className="section-title pl-4">
+                <h2>Contact Me</h2>
+              </div>
+            </div>
+            <h3 className="contact-title">Have You Any Questions ?</h3>
+            <h4 className="contact-sub-title">I'M AT YOUR SERVICES</h4>
+            {/* contact info item */}
+            <div className="row">
+              <div className="contact-info-item">
+                
               </div>
             </div>
           </div>
