@@ -19,14 +19,21 @@ import {
   faCalendar,
   faCode,
   faCodeBranch,
+  faCog,
   faComment,
   faDatabase,
+  faEnvelope,
   faFire,
+  faGlobeEurope,
   faHome,
   faLaptopCode,
   faList,
+  faMapMarkerAlt,
+  faMarker,
   faMobileAlt,
+  faMoon,
   faPalette,
+  faPhone,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -35,8 +42,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import man from '../public/man.jpg';
 import Portfolio from './portfolio';
+import StyleSwitcher from './styleSwitcher';
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -45,7 +54,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="main-container">
+      <main className="main-container dark">
+        <StyleSwitcher />
         {/* side navigation */}
         <section className="aside flex justify-center items-center">
           <div className="logo">
@@ -144,7 +154,7 @@ export default function Home() {
             <div className="row">
               <div className="about-content pl-4">
                 <div className="row">
-                  <div className="about-text pl-4">
+                  <div className="about-text lg:pl-4">
                     <h3>
                       I'm Md Riajul Islam and <span>Web Developer</span>
                     </h3>
@@ -180,7 +190,10 @@ export default function Home() {
                       </div>
                       <div className="info-item pl-4">
                         <p>
-                          Email : <span>connect.riaj@hotmail.com</span>
+                          Email :{' '}
+                          <span className="break-words">
+                            connect.riaj@hotmail.com
+                          </span>
                         </p>
                       </div>
                       <div className="info-item pl-4">
@@ -208,7 +221,7 @@ export default function Home() {
                       <div className="buttons">
                         <a
                           href="#"
-                          className="btn btn-error text-base py-[12px] px-[35px] rounded-full inline-block whitespace-nowrap ml-4 "
+                          className="btn btn-error text-base py-[12px] px-[35px] rounded-full inline-block whitespace-nowrap lg:ml-4 "
                         >
                           Download CV
                         </a>
@@ -222,12 +235,12 @@ export default function Home() {
                     </div>
 
                     {/* education and experiences */}
-                    <div className=" flex lg:flex-row flex-col justify-between gap-x-8">
-                      <div className="education pl-4">
+                    <div className="flex lg:flex-row flex-col justify-between gap-x-8">
+                      <div className="education lg:pl-4">
                         <h3 className="title">Education</h3>
-                        <div className="row lg:w-[600px]">
-                          <div className="timeline-box pl-4">
-                            <div className="timeline shadow-dark glass">
+                        <div className="row lg:w-[600px] w-full">
+                          <div className="timeline-box lg:pl-4">
+                            <div className="timeline shadow-dark">
                               {/* timeline item  */}
                               <div className="timeline-item">
                                 <div className="circle-dot"></div>
@@ -295,11 +308,11 @@ export default function Home() {
                           </div>
                         </div>
                       </div>
-                      <div className="experience pl-4">
+                      <div className="experience lg:pl-4">
                         <h3 className="title">Experience</h3>
-                        <div className="row lg:w-[600px]">
-                          <div className="timeline-box pl-4">
-                            <div className="timeline shadow-dark glass">
+                        <div className="row lg:w-[600px] w-full">
+                          <div className="timeline-box lg:pl-4">
+                            <div className="timeline shadow-dark">
                               {/* timeline item  */}
                               <div className="timeline-item">
                                 <div className="circle-dot"></div>
@@ -670,7 +683,7 @@ export default function Home() {
                 <div className="service-item pl-4">
                   <div className="service-item-inner  pl-4">
                     <div className="icon">
-                      <FontAwesomeIcon className="icon" icon={faCode} />
+                      <FontAwesomeIcon className="icon" icon={faMobileAlt} />
                     </div>
                     <h4 className="text-lg font-bold mb-2">Web Design</h4>
                     <p>
@@ -679,12 +692,11 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-
                 {/* service item  */}
                 <div className="service-item pl-4">
                   <div className="service-item-inner  pl-4">
                     <div className="icon">
-                      <FontAwesomeIcon className="icon" icon={faBullhorn} />
+                      <FontAwesomeIcon className="icon" icon={faLaptopCode} />
                     </div>
                     <h4 className="text-lg font-bold mb-2">Web Design</h4>
                     <p>
@@ -699,7 +711,7 @@ export default function Home() {
                 <div className="service-item pl-4">
                   <div className="service-item-inner  pl-4">
                     <div className="icon">
-                      <FontAwesomeIcon className="icon" icon={faPalette} />
+                      <FontAwesomeIcon className="icon" icon={faMobileAlt} />
                     </div>
                     <h4 className="text-lg font-bold mb-2">Web Design</h4>
                     <p>
@@ -710,9 +722,9 @@ export default function Home() {
                 </div>
                 {/* service item  */}
                 <div className="service-item pl-4">
-                  <div className="service-item-inner pl-4">
+                  <div className="service-item-inner  pl-4">
                     <div className="icon">
-                      <FontAwesomeIcon className="icon" icon={faReact} />
+                      <FontAwesomeIcon className="icon" icon={faLaptopCode} />
                     </div>
                     <h4 className="text-lg font-bold mb-2">Web Design</h4>
                     <p>
@@ -754,17 +766,111 @@ export default function Home() {
                 <h2>Contact Me</h2>
               </div>
             </div>
-            <h3 className="contact-title">Have You Any Questions ?</h3>
-            <h4 className="contact-sub-title">I'M AT YOUR SERVICES</h4>
+            <h3 className="contact-title pl-4">Have You Any Questions ?</h3>
+            <h4 className="contact-sub-title pl-4">I'M AT YOUR SERVICES</h4>
             {/* contact info item */}
             <div className="row">
-              <div className="contact-info-item">
-                
+              <div className="contact-info-item pl-4">
+                <div className="icon">
+                  <FontAwesomeIcon className="icon" icon={faPhone} />
+                </div>
+                <h4>Call Us On</h4>
+                <p>+88 01706848920</p>
+              </div>
+
+              <div className="contact-info-item pl-4">
+                <div className="icon">
+                  <FontAwesomeIcon className="icon" icon={faMapMarkerAlt} />
+                </div>
+                <h4>Office</h4>
+                <p>Jessore - 7401 </p>
+              </div>
+
+              <div className="contact-info-item pl-4">
+                <div className="icon">
+                  <FontAwesomeIcon className="icon" icon={faEnvelope} />
+                </div>
+                <h4>Email</h4>
+                <p>connect.riaj@hotmail.com</p>
+              </div>
+
+              <div className="contact-info-item pl-4">
+                <div className="icon">
+                  <FontAwesomeIcon className="icon" icon={faGlobeEurope} />
+                </div>
+                <h4>Email</h4>
+                <p>www.connectriaj.com</p>
+              </div>
+            </div>
+            <h3 className="contact-title uppercase pl-4">Send Me An Email</h3>
+            <h4 className="contact-sub-title capitalize pl-4">
+              I'm very responsive to message
+            </h4>
+            {/* contact form */}
+            <div className="row">
+              <div className="contact-form pl-4">
+                <div className="row">
+                  <div className="form-item col-6 pl-4">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Name"
+                      />
+                    </div>
+                  </div>
+                  <div className="form-item col-6 pl-4">
+                    <div className="form-group">
+                      <input
+                        type="email"
+                        className="form-control"
+                        placeholder="Email"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="form-item col-12 pl-4">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Subject"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="form-item col-12 pl-4">
+                    <div className="form-group">
+                      <textarea
+                        name=""
+                        className="form-control"
+                        id=""
+                        placeholder="Message"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="form-item col-12 pl-4">
+                    <button
+                      type="submit"
+                      class="btn btn-error text-base py-[12px] px-[35px] rounded-full inline-block whitespace-nowrap"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
+      {/* main container end  */}
     </>
   );
 }
